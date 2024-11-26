@@ -6,13 +6,13 @@
 /*   By: egerin <egerin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:38:48 by egerin            #+#    #+#             */
-/*   Updated: 2024/11/25 18:22:44 by egerin           ###   ########.fr       */
+/*   Updated: 2024/11/26 14:37:11 by egerin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c)
 {
-	return (write(fd, &c, 1));
+	return (write(1, &c, 1));
 }

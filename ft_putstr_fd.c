@@ -6,19 +6,25 @@
 /*   By: egerin <egerin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:11:03 by egerin            #+#    #+#             */
-/*   Updated: 2024/11/25 18:11:42 by egerin           ###   ########.fr       */
+/*   Updated: 2024/11/26 15:26:21 by egerin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s)
 {
 	int	i;
 
 	i = 0;
-	while (s[i] && s)
+	while (s[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		write(1, &s[i], 1);
 		i++;
 	}
+	if (s == NULL)
+	{
+		ft_putstr_fd("(null)");
+		return (6);
+	}
+	return (i);
 }
